@@ -2,17 +2,16 @@
 session_start();
 include ("funciones.php");
 
-//obtengo la configuración
-//para comprobar el usuario y la contraseña
+//Se obtiene la configuración para comprobar el usuario y la contraseña
 $config = obtenerConfiguracion();
 
-//pregunto si se presionó el boton ingresar (login)
+//Se pregunta si se presionó el boton ingresar (login)
 if (isset($_POST['login'])) {
-    //tomo los datos que vienen del cliente
+    //Se toma los datos que vienen del admin
     $usuario = $_POST['usuario'];
     $password = $_POST['password'];
 
-    //comparo con los datos del usuario guardados en la base de datos
+    //Comparo con los datos del usuario guardados en la base de datos
     if (($usuario == $config['usuario']) && ($password == $config['password'])) {
         $_SESSION['usuarioLogeado'] = "Administrador";
         header("Location: index.php");
@@ -21,6 +20,7 @@ if (isset($_POST['login'])) {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

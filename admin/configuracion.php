@@ -10,13 +10,13 @@ include("funciones.php");
 
 $config = obtenerConfiguracion();
 
-/******************************************************* */
+/********************************************************/
 //ACTUALIZAMOSS LA CONFIGURACION
 if (isset($_GET['actualizar'])) {
-    //nos conectamos a la base de datos
+    //Nos conectamos a la base de datos
     include("conexion.php");
 
-    //tomamos los datos que vienen del formulario
+    //Tomamos los datos que vienen del formulario
     $usuario = $_GET['usuario'];
     $password = $_GET['password'];
     $totalPreguntas = $_GET['totalPreguntas'];
@@ -32,6 +32,8 @@ if (isset($_GET['actualizar'])) {
         $mensaje = "No se pudo actualizar en la BD" . mysqli_error($conn);
     }
 }
+
+
 //ELIMINAR PREGUNTAS
 if (isset($_GET['eliminarPreguntas'])) {
     //nos conectamos a la base de datos
@@ -46,6 +48,8 @@ if (isset($_GET['eliminarPreguntas'])) {
         $mensaje = "No se pudo eliminar en la BD" . mysqli_error($conn);
     }
 }
+
+
 //ELIMINAMOS LAS PREGUNTAS Y LAS CATEGORIAS
 if (isset($_GET['eliminarTodo'])) {
     //nos conectamos a la base de datos
